@@ -1,0 +1,61 @@
+.NET MVC3 STARTER SITE README 
+-----------------------------
+
+Based on the Tekpub MVC2 Starter Site [http://mvcstarter.codeplex.com/], with these updates:
+
+	* Updated solution, configs and javascripts to use MVC3 defaults
+	* Updated views and scaffolding (code templates) to use Razor view engine
+	* Fixed helpers for MVC3
+	* Two minor convention changes: "Model" -> "Models"; "ID" -> "Id"
+	* Minor bug fixes to views and controllers, and pagination
+
+See the free Tekpub tutorial on building out the MVC2 starter site at http://tekpub.com/production/starter
+And Rob Conery's Tekpub starter blog post, including user comments [http://blog.wekeroad.com/2010/04/19/tekpub-starter]
+For more in depth information check out the Tekpub Mastering ASP.NET MVC 2.0 series http://tekpub.com/productions/aspmvc
+
+
+FEATURES
+1. IoC setup and ready to go (Ninject 2.0)
+2. Logging in place (Nlog)
+3. CodeTemplate overrides for safety by default
+4. Full data access enabled and ready with implementations for Linq to SQL, MongoDB (using NoRM), and DB4O. You can plug in whatever you like, however, including NHibernate
+5. Structural CSS in place and ready to go using the popular Blueprint CSS framework
+6. Error pages created and setup for you
+7. Redone Authentication system that allows you to use ASP Membership or whatever system floats your boat
+8. Reporting interface prepared for you and ready to go
+9. A Task Engine setup (Console app) for running typical developer tasks, such as minifying javascript, emailing users, etc.
+10. BDD test engine setup for you - SpecFlow
+
+
+PREREQUISITES
+Visual Studio 2010 and MVC3 installed. 
+SQL 2008 Express (give the instance the default name of SQLEXPRESS). If you're not using SQL 2008 Express you'll need to create the Site and Reporting databases and change connection strings (will post SQL for this at some point).
+Specflow [http://specflow.org/downloads/installer.aspx]
+
+
+GETTING STARTED
+Watch the free Tekpub tutorial on building out the MVC2 starter site at http://tekpub.com/production/starter and read Rob Conery's Tekpub starter blog post, including user comments [http://blog.wekeroad.com/2010/04/19/tekpub-starter]
+* When creating views make them strongly typed and choose a scaffolding template
+* When you create a new controller you need to add any required fields to the whitelists in the Create and Edit actions
+* Turn custom errors off for development (in web.config)
+
+
+NOTES
+I've left the MVC3 default Account stuff in place for reference, renamed to AccountController.bak.cs, AccountModel.bak.cs, Views/Account.bak, and Views/Shared/_LogOnPartial.bak.cshtml.
+Also for reference I've backed up the default MVC3 master page to Views/Shared/_Layout.bak.cshtml.
+None of this is being used in the starter site and unless you specifically want to use it, you should delete these files.
+
+
+CONVENTION CHANGES
+I've made the following changes to conventions used in the tekpub MVC2 starter project:
+	The 'models' folder was called 'model' in the MVC2 Tekpub starter project, I've renamed this back to 'models' as this is a more standard convention for .Net MVC projects.
+	The scaffolding templates assume that each model has an Id called 'Id' (this was named 'ID' in the MVC2 Tekpub starter project)
+	I've renamed the 'Tasks' project to 'Utilities' as SharpArchitecture projects often have a 'Tasks' layer (synonymous with a 'Services' layer) and I wanted to avoid this confusion.
+
+	
+FURTHER READING
+Rob Conery's Tekpub starter blog post, including user comments [http://blog.wekeroad.com/2010/04/19/tekpub-starter]
+There are some useful comments on the original Tekpub MVC2 codebase [http://mvcstarter.codeplex.com/workitem/list/basic]. Hopefully most of these issues have been fixed in this MVC3 project.
+Using Mongo with Linq [http://blog.wekeroad.com/2010/03/04/using-mongo-with-linq]
+Notes on useful helpers [http://blog.wekeroad.com/2010/01/20/my-favorite-helpers-for-aspnet-mvc]
+Implementing an ISession-compatible membership provider [http://www.velocitydatasolutions.com/blog/2010/05/12/Implementing-an-ISession-compatible-MembershipProvider]
