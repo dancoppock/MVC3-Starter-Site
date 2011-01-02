@@ -1,0 +1,179 @@
+﻿body{
+    background-color:#2d2d2d;
+}
+/*
+a{
+    text-decoration:none;
+    color:#666;
+}
+*/
+
+#header{
+    padding-bottom:8px;
+    padding-top:8px;
+    background-color:#2d2d2d;
+    border-bottom:2px solid #ccc;
+    height:36px;
+    font-family:'helvetica';
+    color:#fff;
+    font-weight: bold;
+    font-size: 1.0em;
+}
+#sub-content
+{
+    background-color: #F4F4F4;
+    border-top: 1px solid #333;
+    padding-top: 32px;
+}
+#splash{
+    height:320px;
+    padding-top:48px;
+    padding-bottom:32px;
+
+}
+
+#logo{
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+    font-family: helvetica;
+}
+#site-menu{
+}
+    #site-menu a
+{
+    font-weight: bold;
+    text-decoration: none;
+    color: #C0C0C0;
+    font-size: 1.0em;
+    font-family: helvetica;
+}
+#main{
+    background-color:#fff;
+}
+#footer{
+    padding:28px;
+    border-top:3px solid #666;
+    text-align:center;
+    font-style:italic;
+    font-size:0.9em;
+    color:#ccc;
+}
+#footer a{
+    color:#fff;
+    font-weight:bold;
+}
+#lead{
+    padding:28px;
+}
+
+
+    
+.info
+{
+    background-color: #CCFFCC;
+    border-top: 1px solid #FFCC66;
+    border-bottom: 4px solid #FFCC66;
+    padding: 6px;
+    font-family: helvetica;
+    font-size: 1.1em;
+    text-align: center;
+    border-top-color: #006600;
+    border-bottom-color: #006600;
+    font-weight: bold;
+    color: #339933;
+    cursor:pointer;
+}
+.warning
+{
+    background-color: #FFFF99;
+    border-top: 1px solid #FFCC66;
+    border-bottom: 4px solid #FFCC66;
+    padding: 6px;
+    font-family: helvetica;
+    font-size: 0.9em;
+    text-align: center;
+    border-top-color: #CC9900;
+    border-bottom-color: #CC9900;
+    font-weight: bold;
+    color: #663300;
+    cursor:pointer;
+}
+.error
+{
+    background-color: #FFCC99;
+    border-top: 1px solid #FFCC66;
+    border-bottom: 4px solid #FFCC66;
+    padding: 4px;
+    font-family: helvetica;
+    font-size: 1.1em;
+    text-align: center;
+    border-top-color: #800000;
+    border-bottom-color: #800000;
+    font-weight: bold;
+    color: #990000;
+    cursor:pointer;
+}
+
+
+
+
+/* Styles for MVC3 framework validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
+/* Styles for MVC3 framework editor and display helpers
+----------------------------------------------------------*/
+.display-label,
+.editor-label
+{
+    margin: 1em 0 0 0;
+    font-weight: bold;
+}
+
+.display-field,
+.editor-field
+{
+    margin:0.5em 0 0 0;
+}
+
+.text-box
+{
+    width: 30em;
+}
+
+.text-box.multi-line
+{
+    height: 6.5em;
+}
+
+.tri-state
+{
+    width: 6em;
+}

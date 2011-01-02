@@ -1,0 +1,12 @@
+﻿
+@if ( (Context.User != null) && (Context.User.Identity.IsAuthenticated) ) { 
+    <text>
+        Hi @Html.Friendly() | 
+		<form id="fLougout" name="fLogout" action="@Url.Action("delete","session")" method="post" style="display:inline">
+			@Html.AntiForgeryToken()
+			<a href="" onclick="fLogout.submit();return false;" >Logout</a>
+		</form>
+    </text>
+} else { 
+    @Html.ActionLink("Login","create","session") 
+} 

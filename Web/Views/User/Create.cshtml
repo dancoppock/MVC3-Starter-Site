@@ -1,0 +1,80 @@
+﻿@model Web.Models.User
+
+@{
+    ViewBag.Title = "User Create";
+}
+
+    @Html.DatePickerEnable() 
+<div class="container">
+    <div class="lead column last span-24">
+        <h2>Create a User</h2>
+    </div>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken() 
+        @Html.ValidationSummary(true) 
+
+        <fieldset>
+            <legend>Fields</legend>
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.UserName) 
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.UserName) 
+                @Html.ValidationMessageFor(model => model.UserName) 
+            </div>
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.OpenID) 
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.OpenID) 
+                @Html.ValidationMessageFor(model => model.OpenID) 
+            </div>
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.LastLogin) 
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.LastLogin) 
+                @Html.ValidationMessageFor(model => model.LastLogin) 
+            </div>
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CreatedOn) 
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.CreatedOn) 
+                @Html.ValidationMessageFor(model => model.CreatedOn) 
+            </div>
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ModifiedOn) 
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ModifiedOn) 
+                @Html.ValidationMessageFor(model => model.ModifiedOn) 
+            </div>
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Friendly) 
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Friendly) 
+                @Html.ValidationMessageFor(model => model.Friendly) 
+            </div>
+            
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+        </fieldset>
+
+    } 
+
+    <div>
+        @Html.ActionLink("Back to List", "Index") 
+    </div>
+
+</div>
+

@@ -1,0 +1,47 @@
+﻿@model Web.Models.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<div class="container">
+    <div class="lead column last span-24">
+        <h2>User Details</h2>
+    </div>
+    <div class="last span-14">
+
+<fieldset>
+    <legend>User</legend>
+
+    <div class="display-label">UserName</div>
+    <div class="display-field">@Model.UserName</div>
+
+    <div class="display-label">OpenID</div>
+    <div class="display-field">@Model.OpenID</div>
+
+    <div class="display-label">LastLogin</div>
+    <div class="display-field">@String.Format("{0:g}", Model.LastLogin)</div>
+
+    <div class="display-label">CreatedOn</div>
+    <div class="display-field">@String.Format("{0:g}", Model.CreatedOn)</div>
+
+    <div class="display-label">ModifiedOn</div>
+    <div class="display-field">@String.Format("{0:g}", Model.ModifiedOn)</div>
+
+    <div class="display-label">Friendly</div>
+    <div class="display-field">@Model.Friendly</div>
+</fieldset>
+<div class="clear"></div>
+
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+    </div>
+</div>
+
+
+

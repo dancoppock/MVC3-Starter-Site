@@ -1,0 +1,94 @@
+﻿@model Web.Models.User
+           
+@{
+    ViewBag.Title = "User Edit";
+}
+
+
+@Html.DatePickerEnable() 
+
+<div class="container">
+    <div class="lead column last span-24">
+        <h2>User Edit</h2>
+    </div>
+    <div class="column span-14">
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken() 
+        @Html.ValidationSummary(true) 
+        
+        <fieldset>
+            <legend>Fields</legend>
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.UserName) 
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.UserName) 
+                @Html.ValidationMessageFor(model => model.UserName) 
+            </div>
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.OpenID) 
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.OpenID) 
+                @Html.ValidationMessageFor(model => model.OpenID) 
+            </div>
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.LastLogin) 
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.LastLogin) 
+                @Html.ValidationMessageFor(model => model.LastLogin) 
+            </div>
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CreatedOn) 
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.CreatedOn) 
+                @Html.ValidationMessageFor(model => model.CreatedOn) 
+            </div>
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ModifiedOn) 
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ModifiedOn) 
+                @Html.ValidationMessageFor(model => model.ModifiedOn) 
+            </div>
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Friendly) 
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Friendly) 
+                @Html.ValidationMessageFor(model => model.Friendly) 
+            </div>
+            
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        </fieldset>
+    }
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="column span-2 append-2">
+        @Html.ActionLink("Back to List", "Index") 
+    </div>
+    
+    <div class ="column span-8 right">
+        <form action="@Url.Action("delete")" method="post" onsubmit="return confirm('Delete this record?');">
+            @Html.AntiForgeryToken() 
+            @Html.Hidden("id",Model.UserName) 
+            <input type="submit" value="delete" />
+        </form>
+    </div>
+
+</div>
+

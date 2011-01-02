@@ -1,0 +1,69 @@
+﻿@model PagedList<Web.Models.User>
+
+@{
+    ViewBag.Title = "User Index";
+}
+
+   
+<div class="container">
+    <div class="lead column last span-24">
+        <h2>Users</h2>
+    </div>
+    <div class="column">
+    <table>
+        <tr>
+            <th></th>
+            <th>
+                UserName
+            </th>
+            <th>
+                LastLogin
+            </th>
+            <th>
+                CreatedOn
+            </th>
+            <th>
+                Friendly
+            </th>
+        </tr>
+
+        @foreach (var item in Model) { 
+            <tr>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.ID })  |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                </td>
+                <td>
+                    @Html.Encode(item.UserName) 
+                </td>
+                <td>
+                    @Html.Encode(String.Format("{0:g}", item.LastLogin)) 
+                </td>
+                <td>
+                    @Html.Encode(String.Format("{0:g}", item.CreatedOn)) 
+                </td>
+                <td>
+                    @Html.Encode(item.Friendly) 
+                </td>
+            </tr>
+        }
+     
+
+        <tr>
+            <td colspan="7" class="pager">
+
+            @Html.Partial("_Pagination") 
+
+            </td>
+        </tr>
+
+
+    </table>
+
+    <p>
+        @Html.ActionLink("Create New", "Create") 
+    </p>
+    </div>
+  </div>
+
+

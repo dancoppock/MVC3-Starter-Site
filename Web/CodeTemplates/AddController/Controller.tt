@@ -1,0 +1,165 @@
+<#@ template language="C#" HostSpecific="True" #>
+<#
+MvcTextTemplateHost mvcHost = (MvcTextTemplateHost)(Host);
+#>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using Web.Infrastructure.Storage;
+using Web.Models;
+
+namespace <#= mvcHost.Namespace #>
+{
+    public class <#= mvcHost.ControllerName #> : Controller
+    {
+
+        const int PageSize=20;
+        ISession _session;
+        public <#= mvcHost.ControllerName #>(ISession session){
+            _session=session;
+        }
+
+        //
+        // GET: <#= (!String.IsNullOrEmpty(mvcHost.AreaName)) ? ("/" + mvcHost.AreaName) : String.Empty #>/<#= mvcHost.ControllerRootName #>/
+
+        public ActionResult Index(int? pg)
+        {
+            int pageIndex=0;
+            if(pg.HasValue){
+                pageIndex=pg.Value;
+            }
+
+            var items = _session.All<<#= mvcHost.ControllerRootName #>>();
+            var list = new PagedList<<#= mvcHost.ControllerRootName #>>(items, pageIndex, PageSize);
+            return View(list);
+        }
+
+
+<#
+if(mvcHost.AddActionMethods) {
+#>
+        //
+        // GET: <#= (!String.IsNullOrEmpty(mvcHost.AreaName)) ? ("/" + mvcHost.AreaName) : String.Empty #>/<#= mvcHost.ControllerRootName #>/Details/5
+
+        public ActionResult Details(int id)
+        {
+            var item = _session.Single<<#= mvcHost.ControllerRootName #>>(x=>x.Id == id);
+            return View(item);
+        }
+
+        //
+        // GET: <#= (!String.IsNullOrEmpty(mvcHost.AreaName)) ? ("/" + mvcHost.AreaName) : String.Empty #>/<#= mvcHost.ControllerRootName #>/Create
+        
+		//[Authorize(Roles="Administrator")]
+        public ActionResult Create()
+        {
+            var item = new <#= mvcHost.ControllerRootName #>();
+            return View(item);
+        } 
+
+        //
+        // POST: <#= (!String.IsNullOrEmpty(mvcHost.AreaName)) ? ("/" + mvcHost.AreaName) : String.Empty #>/<#= mvcHost.ControllerRootName #>/Create
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        //[Authorize(Roles="Administrator")]
+        public ActionResult Create(FormCollection collection)
+        {
+            
+            var item = new <#= mvcHost.ControllerRootName #>();
+            //please don't omit this...
+            var whiteList=new string[]{"field1","field2"};
+            UpdateModel(item,whiteList,collection.ToValueProvider());
+            
+            if(ModelState.IsValid){
+                try
+                {
+                    _session.Add<<#= mvcHost.ControllerRootName #>>(item);
+                    _session.CommitChanges();
+                    this.FlashInfo("<#= mvcHost.ControllerRootName #> saved...");
+                    return RedirectToAction("Index");
+                }
+                catch
+                {
+                    this.FlashError("There was an error saving this record");
+                    return View(item);
+                }
+            }
+            return View(item);
+
+        }
+
+        //
+        // GET: <#= (!String.IsNullOrEmpty(mvcHost.AreaName)) ? ("/" + mvcHost.AreaName) : String.Empty #>/<#= mvcHost.ControllerRootName #>/Edit/5
+ 
+        //[Authorize(Roles="Administrator")]
+        public ActionResult Edit(int id)
+        {
+            var item = _session.Single<<#= mvcHost.ControllerRootName #>>(x=>x.Id == id);
+            return View(item);
+        }
+
+
+        //
+        // POST: <#= (!String.IsNullOrEmpty(mvcHost.AreaName)) ? ("/" + mvcHost.AreaName) : String.Empty #>/<#= mvcHost.ControllerRootName #>/Edit/5
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        //[Authorize(Roles="Administrator")]
+        public ActionResult Edit(int id, FormCollection collection)
+        {
+            var item = _session.Single<<#= mvcHost.ControllerRootName #>>(x=>x.Id == id);
+            //please don't omit this...
+            var whiteList=new string[]{"field1","field2"};
+            UpdateModel(item,whiteList,collection.ToValueProvider());
+            
+            if(ModelState.IsValid){
+                try
+                {
+                    _session.Update<<#= mvcHost.ControllerRootName #>>(item);
+                    _session.CommitChanges();
+                    this.FlashInfo("<#= mvcHost.ControllerRootName #> saved...");
+                    return RedirectToAction("Index");
+                }
+                catch
+                {
+                    this.FlashError("There was an error saving this record");
+                    return View(item);
+                }
+            }
+            return View(item);
+
+        }
+
+
+        //
+        // POST: <#= (!String.IsNullOrEmpty(mvcHost.AreaName)) ? ("/" + mvcHost.AreaName) : String.Empty #>/<#= mvcHost.ControllerRootName #>/Delete/5
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        //[Authorize(Roles="Administrator")]
+        public ActionResult Delete(int id, FormCollection collection)
+        {
+            var item = _session.Single<<#= mvcHost.ControllerRootName #>>(x=>x.Id == id);
+            try
+            {
+                _session.Delete<<#= mvcHost.ControllerRootName #>>(item);
+                _session.CommitChanges();
+                this.FlashInfo("<#= mvcHost.ControllerRootName #> deleted ...");
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                this.FlashError("There was an error deleting this record");
+                return View("Edit",item);
+            }
+        }
+
+
+<#
+}
+#>
+    }
+}

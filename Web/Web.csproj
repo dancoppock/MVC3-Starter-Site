@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{593220A3-2F24-4E72-AA7E-413BF87845BD}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web</RootNamespace>
+    <AssemblyName>Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AntiXSSLibrary">
+      <HintPath>..\lib\AntiXSSLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Db4objects.Db4o">
+      <HintPath>..\lib\Db4objects.Db4o.dll</HintPath>
+    </Reference>
+    <Reference Include="Db4objects.Db4o.Linq">
+      <HintPath>..\lib\Db4objects.Db4o.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth">
+      <HintPath>..\lib\DotNetOpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NHaml">
+      <HintPath>..\lib\NHaml.dll</HintPath>
+    </Reference>
+    <Reference Include="NHaml.Web.Mvc">
+      <HintPath>..\lib\NHaml.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\lib\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc">
+      <HintPath>..\lib\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\lib\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Norm">
+      <HintPath>..\lib\Norm.dll</HintPath>
+    </Reference>
+    <Reference Include="Spark">
+      <HintPath>..\lib\Spark.dll</HintPath>
+    </Reference>
+    <Reference Include="Spark.Web.Mvc">
+      <HintPath>..\lib\Spark.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="SubSonic.Core">
+      <HintPath>..\lib\SubSonic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages" />
+    <Reference Include="System.Web.Helpers" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AccountController.bak.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SessionController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\FlashHelpers.cs" />
+    <Compile Include="Helpers\HtmlHelpers.cs" />
+    <Compile Include="Helpers\Lists.cs" />
+    <Compile Include="Helpers\PagedList.cs" />
+    <Compile Include="Helpers\Routing.cs" />
+    <Compile Include="Helpers\Url.cs" />
+    <Compile Include="Helpers\ViewData.cs" />
+    <Compile Include="Helpers\XSSHelper.cs" />
+    <Compile Include="Infrastructure\Authentication\AspNetAuthenticationService.cs" />
+    <Compile Include="Infrastructure\Authentication\IAuthenticationService.cs" />
+    <Compile Include="Infrastructure\Filters\TransactionFilterAttribute.cs" />
+    <Compile Include="Infrastructure\Logging\EventLogLogger.cs" />
+    <Compile Include="Infrastructure\Logging\ILogger.cs" />
+    <Compile Include="Infrastructure\Logging\LogUtility.cs" />
+    <Compile Include="Infrastructure\Logging\NLogLogger.cs" />
+    <Compile Include="Infrastructure\Reporting\IReporting.cs" />
+    <Compile Include="Infrastructure\Reporting\ReportingSession.cs" />
+    <Compile Include="Infrastructure\Storage\DB4O\DB4OReadOnlySession.cs" />
+    <Compile Include="Infrastructure\Storage\DB4O\DB4OServer.cs" />
+    <Compile Include="Infrastructure\Storage\DB4O\DB4OSession.cs" />
+    <Compile Include="Infrastructure\Storage\EF\EFReadOnlySession.cs" />
+    <Compile Include="Infrastructure\Storage\EF\EFSession.cs" />
+    <Compile Include="Infrastructure\Storage\InMemory\InMemorySession.cs" />
+    <Compile Include="Infrastructure\Storage\INoSqlServer.cs" />
+    <Compile Include="Infrastructure\Storage\IReadOnlySession.cs" />
+    <Compile Include="Infrastructure\Storage\ISession.cs" />
+    <Compile Include="Infrastructure\Storage\LinqToSQL\LinqToSqlReadOnlySession.cs" />
+    <Compile Include="Infrastructure\Storage\LinqToSQL\LinqToSqlSession.cs" />
+    <Compile Include="Infrastructure\Storage\MongoDB\MongoSession.cs" />
+    <Compile Include="Infrastructure\Storage\SubSonic\SubSonicSimple.cs" />
+    <Compile Include="Models\AccountModels.bak.cs" />
+    <Compile Include="Models\Site.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Site.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SiteEFSession.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporting\Reporting1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reporting.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\UserActivity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\ASPNETDB.MDF" />
+    <Content Include="App_Data\aspnetdb_log.ldf">
+      <DependentUpon>ASPNETDB.MDF</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Reporting.mdf" />
+    <Content Include="App_Data\Reporting_log.LDF">
+      <DependentUpon>Reporting.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Site.mdf" />
+    <Content Include="App_Data\Site_log.LDF">
+      <DependentUpon>Site.mdf</DependentUpon>
+    </Content>
+    <Content Include="Global.asax" />
+    <Content Include="Infrastructure\Storage\DB4O\README.txt" />
+    <Content Include="Infrastructure\Storage\MongoDB\README.txt" />
+    <Content Include="Public\css\ie.css" />
+    <Content Include="Public\css\images\ui-bg_flat_30_cccccc_40x100.png" />
+    <Content Include="Public\css\images\ui-bg_flat_50_5c5c5c_40x100.png" />
+    <Content Include="Public\css\images\ui-bg_glass_20_555555_1x400.png" />
+    <Content Include="Public\css\images\ui-bg_glass_40_0078a3_1x400.png" />
+    <Content Include="Public\css\images\ui-bg_glass_40_ffc73d_1x400.png" />
+    <Content Include="Public\css\images\ui-bg_gloss-wave_25_333333_500x100.png" />
+    <Content Include="Public\css\images\ui-bg_highlight-soft_80_eeeeee_1x100.png" />
+    <Content Include="Public\css\images\ui-bg_inset-soft_25_000000_1x100.png" />
+    <Content Include="Public\css\images\ui-bg_inset-soft_30_f58400_1x100.png" />
+    <Content Include="Public\css\images\ui-icons_222222_256x240.png" />
+    <Content Include="Public\css\images\ui-icons_4b8e0b_256x240.png" />
+    <Content Include="Public\css\images\ui-icons_a83300_256x240.png" />
+    <Content Include="Public\css\images\ui-icons_cccccc_256x240.png" />
+    <Content Include="Public\css\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Public\css\jquery-ui-1.7.2.css" />
+    <Content Include="Public\css\openid.css" />
+    <Content Include="Public\css\plugins\buttons\icons\cross.png" />
+    <Content Include="Public\css\plugins\buttons\icons\key.png" />
+    <Content Include="Public\css\plugins\buttons\icons\tick.png" />
+    <Content Include="Public\css\plugins\buttons\readme.txt" />
+    <Content Include="Public\css\plugins\buttons\screen.css" />
+    <Content Include="Public\css\plugins\fancy-type\readme.txt" />
+    <Content Include="Public\css\plugins\fancy-type\screen.css" />
+    <Content Include="Public\css\plugins\link-icons\icons\doc.png" />
+    <Content Include="Public\css\plugins\link-icons\icons\email.png" />
+    <Content Include="Public\css\plugins\link-icons\icons\external.png" />
+    <Content Include="Public\css\plugins\link-icons\icons\feed.png" />
+    <Content Include="Public\css\plugins\link-icons\icons\im.png" />
+    <Content Include="Public\css\plugins\link-icons\icons\pdf.png" />
+    <Content Include="Public\css\plugins\link-icons\icons\visited.png" />
+    <Content Include="Public\css\plugins\link-icons\icons\xls.png" />
+    <Content Include="Public\css\plugins\link-icons\readme.txt" />
+    <Content Include="Public\css\plugins\link-icons\screen.css" />
+    <Content Include="Public\css\plugins\rtl\readme.txt" />
+    <Content Include="Public\css\plugins\rtl\screen.css" />
+    <Content Include="Public\css\print.css" />
+    <Content Include="Public\css\screen.css" />
+    <Content Include="Public\css\src\forms.css" />
+    <Content Include="Public\css\src\grid.css" />
+    <Content Include="Public\css\src\grid.png" />
+    <Content Include="Public\css\src\ie.css" />
+    <Content Include="Public\css\src\print.css" />
+    <Content Include="Public\css\src\reset.css" />
+    <Content Include="Public\css\src\typography.css" />
+    <Content Include="Public\images\cock.png" />
+    <Content Include="Public\images\control_end.png" />
+    <Content Include="Public\images\control_end_blue.png" />
+    <Content Include="Public\images\control_fastforward.png" />
+    <Content Include="Public\images\control_fastforward_blue.png" />
+    <Content Include="Public\images\control_rewind.png" />
+    <Content Include="Public\images\control_rewind_blue.png" />
+    <Content Include="Public\images\control_start.png" />
+    <Content Include="Public\images\control_start_blue.png" />
+    <Content Include="Public\images\mastering-aspnet.jpg" />
+    <Content Include="Public\images\openid\aol.gif" />
+    <Content Include="Public\images\openid\blogger.ico" />
+    <Content Include="Public\images\openid\claimid.ico" />
+    <Content Include="Public\images\openid\facebook.gif" />
+    <Content Include="Public\images\openid\flickr.ico" />
+    <Content Include="Public\images\openid\google.gif" />
+    <Content Include="Public\images\openid\livejournal.ico" />
+    <Content Include="Public\images\openid\myopenid.ico" />
+    <Content Include="Public\images\openid\openid-inputicon.gif" />
+    <Content Include="Public\images\openid\openid.gif" />
+    <Content Include="Public\images\openid\technorati.ico" />
+    <Content Include="Public\images\openid\verisign.ico" />
+    <Content Include="Public\images\openid\vidoop.ico" />
+    <Content Include="Public\images\openid\wordpress.ico" />
+    <Content Include="Public\images\openid\yahoo.gif" />
+    <Content Include="Public\images\tekpub.png" />
+    <Content Include="Public\javascript\jquery-1.4.4-vsdoc.js" />
+    <Content Include="Public\javascript\jquery-1.4.4.js" />
+    <Content Include="Public\javascript\jquery-1.4.4.min.js" />
+    <Content Include="Public\javascript\jquery-ui.js" />
+    <Content Include="Public\javascript\jquery-ui.min.js" />
+    <Content Include="Public\javascript\jquery.unobtrusive-ajax.js" />
+    <Content Include="Public\javascript\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Public\javascript\jquery.validate-vsdoc.js" />
+    <Content Include="Public\javascript\jquery.validate.js" />
+    <Content Include="Public\javascript\jquery.validate.min.js" />
+    <Content Include="Public\javascript\jquery.validate.unobtrusive.js" />
+    <Content Include="Public\javascript\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Public\javascript\MicrosoftAjax.debug.js" />
+    <Content Include="Public\javascript\MicrosoftAjax.js" />
+    <Content Include="Public\javascript\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Public\javascript\MicrosoftMvcAjax.js" />
+    <Content Include="Public\javascript\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Public\javascript\MicrosoftMvcValidation.js" />
+    <Content Include="Public\javascript\openid-jquery.js" />
+    <EntityDeploy Include="Models\Site.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Site.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Web.Models</CustomToolNamespace>
+    </EntityDeploy>
+    <None Include="CodeTemplates\AddController\Controller.tt">
+      <LastGenOutput>Controller.cs</LastGenOutput>
+    </None>
+    <None Include="CodeTemplates\AddView\AspxCSharp\Create.tt">
+      <LastGenOutput>Create.cs</LastGenOutput>
+    </None>
+    <None Include="CodeTemplates\AddView\AspxCSharp\Delete.tt">
+      <LastGenOutput>Delete.cs</LastGenOutput>
+    </None>
+    <None Include="CodeTemplates\AddView\AspxCSharp\Details.tt">
+      <LastGenOutput>Details.cs</LastGenOutput>
+    </None>
+    <None Include="CodeTemplates\AddView\AspxCSharp\Edit.tt">
+      <LastGenOutput>Edit.cs</LastGenOutput>
+    </None>
+    <None Include="CodeTemplates\AddView\AspxCSharp\Empty.tt">
+      <LastGenOutput>Empty.cs</LastGenOutput>
+    </None>
+    <None Include="CodeTemplates\AddView\AspxCSharp\List.tt">
+      <LastGenOutput>List.cs</LastGenOutput>
+    </None>
+    <None Include="CodeTemplates\AddView\CSHTML\Create.tt">
+      <LastGenOutput>Create.cshtml</LastGenOutput>
+    </None>
+    <None Include="CodeTemplates\AddView\CSHTML\Details.tt">
+      <LastGenOutput>Details.cshtml</LastGenOutput>
+    </None>
+    <None Include="CodeTemplates\AddView\CSHTML\Edit.tt">
+      <LastGenOutput>Edit.cshtml</LastGenOutput>
+    </None>
+    <None Include="CodeTemplates\AddView\CSHTML\List.tt">
+      <LastGenOutput>List.cshtml</LastGenOutput>
+    </None>
+    <None Include="Views\Error\NotFound.cshtml" />
+    <None Include="Views\Error\Problem.cshtml" />
+    <None Include="Views\Session\Create.cshtml" />
+    <Content Include="Public\javascript\site.js" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTime.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.ascx" />
+    <Content Include="Views\Shared\_Pagination.cshtml" />
+    <Content Include="Views\Shared\_LogOnPartial.cshtml" />
+    <None Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\Details.cshtml" />
+    <None Include="Views\User\Edit.cshtml" />
+    <None Include="Views\User\Index.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Public\css\site.css" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account.bak\ChangePassword.cshtml" />
+    <Content Include="Views\Account.bak\ChangePasswordSuccess.cshtml" />
+    <Content Include="Views\Account.bak\LogOn.cshtml" />
+    <Content Include="Views\Account.bak\Register.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.bak.cshtml" />
+    <Content Include="Views\Shared\_LogOnPartial.bak.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Models\SiteLinqToSql.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>SiteLinqToSql1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="NLog.config" />
+    <None Include="Reporting\Reporting.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Reporting1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Views\Shared\_Layout.bak.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Reporting\Reporting.dbml.layout">
+      <DependentUpon>Reporting.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\SiteLinqToSql.dbml.layout">
+      <DependentUpon>SiteLinqToSql.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54207</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

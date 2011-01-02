@@ -1,0 +1,45 @@
+﻿<!-- Pagination -->
+
+@Html.Script("site.js")
+
+@{
+    int pageIndex = Model.PageIndex;
+    int currentPage = Model.CurrentPage;
+    int totalPages = Model.TotalPages;
+}
+
+<form action="@Url.Action("index")" method="post" id="pagerForm">
+
+    <input type="hidden" name="pg" id="pg" value="@pageIndex" />
+    @if (currentPage == 1)
+    { 
+        <img src="/public/images/control_start.png" style="cursor:hand" />
+        <img src="/public/images/control_rewind.png" style="cursor:hand"/>
+    } else { 
+        <img src="/public/images/control_start_blue.png" style="cursor:hand" onclick="submitPager(0);"/>
+        <img src="/public/images/control_rewind_blue.png" style="cursor:hand" onclick="submitPager(@(pageIndex - 1));"/>
+    } 
+                    
+    <select onchange="submitPager(this.options[this.selectedIndex].value - 1);"" name="ddpager">
+        @for (int i = 1; i <= totalPages; i++) { 
+            <option 
+                @if (currentPage == i) { 
+                <text>
+                    selected="true"
+                </text>
+                } 
+                value="@i">@i</option>
+        } 
+    </select>
+
+    @if (currentPage == totalPages) { 
+        <img src="/public/images/control_fastforward.png" style="cursor:hand" />
+        <img src="/public/images/control_end.png" style="cursor:hand" />
+    } else { 
+        <img src="/public/images/control_fastforward_blue.png" style="cursor:hand" onclick="submitPager(@(pageIndex + 1));"/>
+        <img src="/public/images/control_end_blue.png" style="cursor:hand" onclick="submitPager(@(totalPages - 1));"/>
+    } 
+                    
+</form>          
+
+<!-- /Pagination -->

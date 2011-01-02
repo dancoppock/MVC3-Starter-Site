@@ -1,0 +1,191 @@
+﻿@model Web.Models.User
+           
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+@Html.DatePickerEnable()
+
+    <div class="container"> 
+      <div id="splash">
+        <div class="column span-12 append-1">
+            <h1>MVC3 Starter Site</h1>
+            <h2 class="alt">@ViewBag.h1Title</h2>
+            <p>Based on the <a href="http://mvcstarter.codeplex.com/" target="_blank">Tekpub MVC2 Starter Site</a>, with these updates:</p>
+            <ul>
+            <li>Updated solution, configs and javascripts to use MVC3 defaults</li>
+            <li>Updated views and code templates (scaffolding) to use Razor view engine</li>
+            <li>Updated helpers and other minor fixes for MVC3</li>
+            </ul>
+
+
+
+        </div>
+        <div class="column span-11 last">
+            @Html.Image("cock.png")
+        </div>
+        <div class="clear"></div>
+      </div>
+     </div>
+     <div id="sub-content"> 
+        <div class="container">
+            <div id="lead"> 
+              <h2 class="alt"> 
+                Read more about the <a href="http://blog.wekeroad.com/2010/04/19/tekpub-starter">Tekpub MVC Starter Site on Rob Conery's blog</a>
+              </h2> 
+            </div> 
+            <div class="span-7 colborder"> 
+              <h6>Here's a box</h6> 
+              <p> 
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
+              </p> 
+              <h6>Here's a Date Editor</h6> 
+              <p>
+                @Html.EditorFor(x => x.LastLogin)
+              </p>
+            </div> 
+            <div class="span-7 colborder"> 
+              <h6>Here's some  Buttons</h6> 
+              <p> 
+                <button class="button positive" type="submit"> 
+                  <img alt="" src="/public/css/plugins/buttons/icons/tick.png" /> 
+                  Save
+                </button> 
+              </p> 
+              <p> 
+                <a class="button" href="/password/reset/"> 
+                  <img alt="" src="/public/css/plugins/buttons/icons/key.png" /> 
+                  Change Password
+                </a> 
+              </p> 
+              <p> 
+                <a class="button negative" href="#"> 
+                  <img alt="" src="/public/css/plugins/buttons/icons/cross.png" /> 
+                  Cancel 
+                </a> 
+              </p> 
+              
+              
+            </div> 
+            <div class="span-7 last"> 
+              <h6>This box is aligned with the sidebar</h6> 
+              <p> 
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+              </p> 
+            </div> 
+            <hr /> 
+            <hr class="space" /> 
+            
+            <div class="span-15 prepend-1 colborder"> 
+              <p> 
+                <a href="http://tekpub.com/production/starter" target="_blank">
+                    <img class="top pull-1 left" alt="test" src="@Url.Content("~/Public/images/mastering-aspnet.jpg")" width='380' /> 
+                </a>
+                Wanna see how this site was built? 
+                <em>Click the pretty picture...</em> 
+              </p> 
+
+              <p>For more in depth information check out the Tekpub <a href="http://tekpub.com/productions/aspmvc" target="_blank">Mastering ASP.NET MVC 2.0</a> series</p>
+              <div class="clear"></div>
+
+              <h2>Main features of the Tekpub starter site</h2>
+
+            <ul>
+            <li>Standardized data access and reporting interfaces with support for:</li>
+                <ul>
+                <li>DB4O</li>
+                <li>EF</li>
+                <li>In Memory Storage</li>
+                <li>LinqToSql</li>
+                <li>MongoDB</li>
+                <li>SubSonic</li>
+                </ul>
+            <li>Authentication and Security</li>
+            <li>Smarter CodeTemplates</li>
+            <li>Fly Flash System</li>
+            <li>Tasks</li>
+            </ul>
+
+
+              <p>
+                <span class="caps">Additional Features</span> 
+              </p> 
+
+              <blockquote> 
+              <ul> 
+                <li>A bunch of my [Rob's] favorite Helpers, including AntiXSS and various HTML things</li> 
+                <li>Support for MongoDB using NoRM</li> 
+                <li>Logging already setup for you with NLog</li> 
+                <li>SpecFlow (Cucumber-like BDD testing tool) setup and ready to go</li> 
+                <li>960 pixel CSS powered by Blueprint CSS and Typography</li> 
+                <li>Custom error handling ready to go</li> 
+                <li>EditorTemplate/Display template examples using jQuery UI date picker</li> 
+                <li>Content directory renamed to "Public" with css, javascript, images, etc pushed into it</li> 
+                <li>IoC already setup with Ninject</li> 
+                <li>Alternate ViewEngines ready to go and configured (but commented out) - Spark and nHaml</li> 
+                <li>An "Application Environment" you can use from anywhere (using Application.Environment) which tells you if you're running Debug or Release</li> 
+              </ul> 
+              </blockquote> 
+
+              <p><em>Read more on <a href="http://blog.wekeroad.com/2010/04/19/tekpub-starter">Rob Conery's blog</a></em></p>
+
+              <hr /> 
+              <div class="span-7 colborder"> 
+                <h6>This is a nested column</h6> 
+                <p> 
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </p> 
+              </div> 
+              <div class="span-7 last"> 
+                <h6>This is another nested column</h6> 
+                <p> 
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </p> 
+              </div> 
+            </div> 
+            <div class="span-7 last"> 
+              <h3> 
+                <span class="alt">Notes</span> for developers
+              </h3> 
+              
+              <ul>
+              <li>When creating views make them strongly typed and choose a scaffolding template</li>
+              <li>When you create a new controller you need to add any required fields to the whitelists in the Create and Edit actions</li>
+              <li>Turn custom errors off for development (in web.config)</li>
+              </ul>
+
+
+              <p class="quiet"> 
+                I've left the MVC3 default Account stuff in place for reference, renamed to AccountController.bak.cs, AccountModel.bak.cs, Views/Account.bak, and Views/Shared/_LogOnPartial.bak.cshtml. <br />
+                Also for reference I've backed up the default MVC3 master page to Views/Shared/_Layout.bak.cshtml.<br />
+                None of this is being used in the starter site and unless you specifically want to use it, you should delete these files.
+              </p> 
+
+              <h3>Further reading</h3>
+              <ul>
+              <li>Rob Conery's <a href="http://blog.wekeroad.com/2010/04/19/tekpub-starter">Tekpub starter blog post</a>, including user comments</li>
+              <li><a href="http://blog.wekeroad.com/2010/03/04/using-mongo-with-linq">Using Mongo with Linq</a></li>
+              <li><a href="http://blog.wekeroad.com/2010/01/20/my-favorite-helpers-for-aspnet-mvc">Notes on useful helpers</a></li>
+              <li><a href="http://www.velocitydatasolutions.com/blog/2010/05/12/Implementing-an-ISession-compatible-MembershipProvider">Implementing an ISession-compatible membership provider</a></li>
+              </ul>
+
+              <h5>Incremental leading</h5> 
+              <p class="incr"> 
+                Vestibulum ante ipsum primis in faucibus orci luctus vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ornare mattis nunc. Mauris venenatis, pede sed aliquet vehicula, lectus tellus pulvinar neque, non cursus sem nisi vel augue. sed aliquet vehicula, lectus tellus.
+              </p> 
+              <p class="incr"> 
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ornare mattis nunc. Mauris venenatis, pede sed aliquet vehicula, lectus tellus pulvinar neque, non cursus sem nisi vel augue. sed aliquet vehicula, lectus tellus pulvinar neque, non cursus sem nisi vel augue. ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ornare mattis nunc. Mauris venenatis, pede sed aliquet vehicula, lectus tellus pulvinar neque, non cursus sem nisi vel augue. sed aliquet vehicula, lectus tellus pulvinar neque, non cursus sem nisi vel augue.
+              </p> 
+            </div> 
+            <hr /> 
+            <div class="span-24 last">
+                <h2 class="alt"> 
+                  You may pick and choose amongst these and many more features, so be bold.
+                </h2> 
+            </div>
+          </div>
+          <div class="clear"></div>
+      </div> 
+
+

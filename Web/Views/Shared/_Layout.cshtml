@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>@ViewBag.Title</title>
+
+     @Html.CSS("site")
+     @Html.CSS("screen")
+     @Html.CSS("print","print")
+     @Html.CSS("plugins/buttons/screen")
+     @Html.CSS("plugins/fancy-type/screen")
+     
+     @Html.Script("jquery-1.4.4.min.js")
+
+     @Html.CSS("jquery-ui-1.7.2.css")
+     @Html.Script("jquery-ui.min.js")
+
+     
+
+      <!--[if lt IE 8]><link rel="stylesheet" href="/public/css/ie.css" type="text/css" media="screen, projection"><![endif]--> 
+
+
+</head>
+@Html.Flash()
+<body>
+    <div id="flash" style="display:none"></div>
+    <div id="header">
+        <div class="container">
+            <div id="logo" class="column span-14">
+                @Html.Image("tekpub.png","width=50")
+            </div>
+            <div id="site-menu" class="column span-8 right">
+                @{
+                 // Html.Partial("_LogOnPartial.bak")   
+                }
+
+                @Html.Partial("_LogOnPartial")
+                
+            </div>
+        </div>
+
+    </div>
+    
+    <div id="main">@RenderBody()</div>
+
+    <div id="footer">
+        Copyright &copy;@DateTime.Now.Year Someone, Somewhere. See the <a href="#">Privacy Terms</a>
+        For what we do with your information
+    </div>
+
+</body>
+</html>
+

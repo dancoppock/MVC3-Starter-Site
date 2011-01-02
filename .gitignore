@@ -1,0 +1,12 @@
+*resharper.user
+[Dd]ebug/
+[Rr]elease/
+build/
+[Bb]in/
+[Oo]bj/
+*.suo
+*.sln.cache
+_ReSharper.*/
+#AssemblyInfo.cs - allowing this to be checked in so users can "F5"
+*.user
+Thumbs.db
