@@ -6,12 +6,11 @@ Based on the Tekpub MVC2 Starter Site [http://mvcstarter.codeplex.com/], with th
 	* Updated solution, configs and javascripts to use MVC3 defaults
 	* Updated views and scaffolding (code templates) to use Razor view engine
 	* Fixed helpers for MVC3
-	* Two minor convention changes: "Model" -> "Models"; "ID" -> "Id"
 	* Minor bug fixes to views and controllers, and pagination
 
-See the free Tekpub tutorial on building out the MVC2 starter site at http://tekpub.com/production/starter
+See the free Tekpub tutorial on building out the MVC2 starter site at [http://tekpub.com/production/starter]
 And Rob Conery's Tekpub starter blog post, including user comments [http://blog.wekeroad.com/2010/04/19/tekpub-starter]
-For more in depth information check out the Tekpub Mastering ASP.NET MVC 2.0 series http://tekpub.com/productions/aspmvc
+For more in depth information check out the Tekpub Mastering ASP.NET MVC 2.0 series [http://tekpub.com/productions/aspmvc]
 
 
 FEATURES
@@ -34,7 +33,8 @@ Specflow [http://specflow.org/downloads/installer.aspx]
 
 
 GETTING STARTED
-Watch the free Tekpub tutorial on building out the MVC2 starter site at http://tekpub.com/production/starter and read Rob Conery's Tekpub starter blog post, including user comments [http://blog.wekeroad.com/2010/04/19/tekpub-starter]
+Watch the free Tekpub tutorial on building out the MVC2 starter site at [http://tekpub.com/production/starter] and read Rob Conery's Tekpub starter blog post, including user comments [http://blog.wekeroad.com/2010/04/19/tekpub-starter]
+
 * When creating views make them strongly typed and choose a scaffolding template
 * When you create a new controller you need to add any required fields to the whitelists in the Create and Edit actions
 * Turn custom errors off for development (in web.config)
